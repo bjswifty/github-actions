@@ -32,17 +32,6 @@ jobs:
       - name: Run the application
         run: python app.py
 
-      - name: Overwrite app.log in main branch
-        run: |
-          git config --global user.email 'you@example.com'
-          git config --global user.name 'Your Name'
-          git checkout main
-          cp app.log app.log.bak  # Backup existing log
-          cp app.log app.log  # Overwrite log file
-          git add app.log
-          git commit -m 'Update app.log from deployment'
-          git push origin main
-
       - name: Upload log artifact
         uses: actions/upload-artifact@v4
         with:
