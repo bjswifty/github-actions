@@ -31,3 +31,12 @@ jobs:
 
       - name: Run the application
         run: python app.py
+      
+      - name: Run the application
+        run: python app.py
+
+      - name: Upload log artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: app-log
+          path: app.log
