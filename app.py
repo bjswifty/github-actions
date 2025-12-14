@@ -14,5 +14,6 @@ current_time = datetime.now(timezone.utc)
 
 # Log the required message
 logging.info(f"this message was logged at {current_time}")
+print("This is a print statement test! 123")
 
 # The script exits cleanly after logging
