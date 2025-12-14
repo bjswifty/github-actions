@@ -1,0 +1,33 @@
+name: Deploy
+
+# Triggers: runs on push to main (e.g., PR merge) and on a configurable schedule
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # Cron schedule: currently set to run hourly. Modify the cron expression below to change frequency.
+    # Common examples:
+    # - '0 * * * *' : Every hour
+    # - '0 0 * * *' : Daily at midnight UTC
+    # - '0 0 * * 0' : Weekly on Sunday at midnight UTC
+    # - '0 0 1 * *' : Monthly on the 1st at midnight UTC
+    - cron: '0 * * * *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run the application
+        run: python app.py

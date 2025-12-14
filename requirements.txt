@@ -1,0 +1,2 @@
+# No external dependencies required for this minimal application
+# Uses only Python's built-in logging and datetime modules
