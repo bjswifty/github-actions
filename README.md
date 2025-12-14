@@ -26,6 +26,6 @@ The workflow triggers on:
 - Push to `main` branch (e.g., merged pull requests)
 - Hourly schedule (configurable in `.github/workflows/deploy.yml`)
 
-To modify the schedule, edit the `cron` expression in the workflow file. Examples:
+To modify the schedule, edit the `cron` expression in the workflow file. Examples: DDDDD
 - `'0 * * * *'`: Every hour
 - `'0 0 * * *'`: Daily at midnight UTC
