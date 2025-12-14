@@ -1,8 +1,13 @@
 import logging
 from datetime import datetime, timezone
 
-# Configure logging to output to console with basic format
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+# Configure logging to output to a file with basic format
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filename='app.log',
+    filemode='a'  # Append mode to preserve previous logs
+)
 
 # Get the current UTC datetime
 current_time = datetime.now(timezone.utc)
